@@ -1,5 +1,5 @@
-**Threat-Modeling-in-Cloud-Enviornment
-**
+Threat-Modeling-in-Cloud-Enviornment 
+
 🛡️Project Title :
 Benchmarking Threat Modeling in Cloud Environments using Infrastructure-as-Code (IaC)
 Group 7 — Cyber Forensics
@@ -18,6 +18,7 @@ We assess two primary factors:
 ⏱️ Effort: The amount of time required for each method
 
 ⚙️ Methodology (Step by Step)
+
 1️⃣ Gather IaC Samples
 
 We developed several Terraform templates that covered common AWS resources like S3, EC2, and IAM roles; some of them were purposefully insecure, while others were secure.
