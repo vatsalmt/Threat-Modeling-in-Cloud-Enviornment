@@ -17,6 +17,7 @@ We assess two primary factors:
 
 ⏱️ Effort: The amount of time required for each method
 
+
 ⚙️ Methodology (Step by Step)
 
 1️⃣ Gather IaC Samples
