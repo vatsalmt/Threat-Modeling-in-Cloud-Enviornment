@@ -1,5 +1,0 @@
-checkov
-pandas
-matplotlib
-jupyterlab
-openpyxl
