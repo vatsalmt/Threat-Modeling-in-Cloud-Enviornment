@@ -46,11 +46,10 @@ Manual threats (manual_threats.csv)
 Automated threats (predicted_threats.csv)
 
 Metrics used:
-
-Precision
-Recall
-F1-score
-Time Taken
+1) Precision
+2) Recall
+3) F1-score
+5) Time Taken
 
 This helped us benchmark both accuracy and effort
 
