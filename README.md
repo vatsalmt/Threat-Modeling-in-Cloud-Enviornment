@@ -21,7 +21,7 @@ We assess two primary factors:
 ⚙️ Methodology (Step by Step)
 
 1️⃣ Gather IaC Samples
-
+     
 We developed several Terraform templates that covered common AWS resources like S3, EC2, and IAM roles; some of them were purposefully insecure, while others were secure.
 
 2️⃣ Define Ground Truth (Manual Threats)
