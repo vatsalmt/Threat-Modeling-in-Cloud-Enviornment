@@ -54,7 +54,8 @@ Metrics used:
 
 This helped us benchmark both accuracy and effort
 
-👩‍💻Authors: 
+🧑‍💻Authors: 
 1) Vatsal Trivedi
-2) Parth Kadiya
-3) Jenish Patel
+🔗LinkedIn(https://www.linkedin.com/in/vatsal-trivedi18/) | GitHub(https://github.com/vatsalmt)
+3) Parth Kadiya
+4) Jenish Patel
