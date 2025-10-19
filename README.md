@@ -65,7 +65,7 @@ This helped us benchmark both accuracy and effort
 🔗 [GitHub](https://github.com/ParthKadiya) • [LinkedIn](https://www.linkedin.com/in/parthkadiya/)
 
   3) Jenish Patel  
-🎓 MS Applied Cybersecurity and Digital Forensics  
+  MS Applied Cybersecurity and Digital Forensics  
 🔗 [GitHub](https://github.com/JenishPatel08) • [LinkedIn](https://www.linkedin.com/in/jenish-patel-91ba32316/)
 
 
