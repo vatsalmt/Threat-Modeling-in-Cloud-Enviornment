@@ -56,6 +56,8 @@ This helped us benchmark both accuracy and effort
 
 🧑‍💻Authors: 
 1) Vatsal Trivedi
-🔗LinkedIn(https://www.linkedin.com/in/vatsal-trivedi18/) | GitHub(https://github.com/vatsalmt)
+   🔗LinkedIn(https://www.linkedin.com/in/vatsal-trivedi18/) | GitHub(https://github.com/vatsalmt)
 3) Parth Kadiya
-4) Jenish Patel
+   🔗LinkedIn(https://www.linkedin.com/in/parthkadiya/) | GitHub(https://github.com/ParthKadiya)
+5) Jenish Patel
+   🔗LinkedIn(https://www.linkedin.com/in/jenish-patel-91ba32316/) | GitHub(https://github.com/JenishPatel08)
