@@ -45,8 +45,8 @@ We assess two primary factors:
 ---
 
 ### **2️⃣ Manual Threat Analysis (Ground Truth)**
-- Each file was manually analyzed and mapped to **STRIDE** and **MITRE ATT&CK** categories.  
-- These findings formed the *gold standard dataset* stored in [`manual_analysis.csv`](manual_analysis/manual_analysis.csv).
+- We did a manual threat assessment for each  file and mapped it to **STRIDE** and **MITRE ATT&CK** categories.  
+- These manual threat assessments are what made up our gold standard dataset and is captured in [`manual_analysis.csv`](manual_analysis/manual_analysis.csv).
 
 ---
 
