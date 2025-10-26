@@ -1,32 +1,5 @@
+# This Python script is developed by Vatsal, Parth, Jenish in order to find accuracy for semi automated vs manual threat finding 
 #!/usr/bin/env python3
-"""
-Cloud Threat Modeling Benchmark — Accuracy Metrics
-
-Reads:
-  manual_analysis/manual_analysis.csv
-  auto_scan_results/predicted_threats.csv
-  auto_scan_results/mapping_rules.csv
-
-Writes (auto-created):
-  results/metrics.json
-  results/summary.txt
-  results/mismatch.csv
-
-Features:
-  - Case-insensitive, trimmed comparisons (prevents false errors)
-  - Optional minimum-severity filter on predictions (LOW/MEDIUM/HIGH/CRITICAL)
-  - Optional requirement to match ATT&CK when present in manual set
-  - Clear human-readable summary
-
-Run:
-  python accuracy_metrics.py
-Optional flags:
-  --min-severity medium        (default: low)
-  --require-attack-id true     (default: true)
-
-Example:
-  python accuracy_metrics.py --min-severity medium --require-attack-id true
-"""
 
 import argparse
 import json
@@ -34,10 +7,8 @@ import os
 import sys
 import pandas as pd
 
-
-# -------------------------
 # Paths (relative to script)
-# -------------------------
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 MANUAL_PATH = os.path.join(ROOT, "manual_analysis", "manual_analysis.csv")
 PRED_PATH   = os.path.join(ROOT, "auto_scan_results", "predicted_threats.csv")
@@ -70,7 +41,6 @@ def load_inputs():
     pred   = pd.read_csv(PRED_PATH).fillna("")
     mapping= pd.read_csv(MAP_PATH).fillna("")
 
-    # Soft schema checks with helpful messages
     need_manual_cols = {"file","stride","attack_id"}
     if not need_manual_cols.issubset(set(c.lower() for c in manual.columns)):
         sys.stderr.write("[ERROR] manual_analysis.csv must have at least columns: file,stride,attack_id\n")
@@ -86,7 +56,7 @@ def load_inputs():
         sys.stderr.write("[ERROR] mapping_rules.csv must have columns: rule_id,stride,attack_id\n")
         sys.exit(1)
 
-    # Normalize column names (lowercase) to avoid case issues in headers
+    
     manual.columns  = [c.lower() for c in manual.columns]
     pred.columns    = [c.lower() for c in pred.columns]
     mapping.columns = [c.lower() for c in mapping.columns]
@@ -95,7 +65,7 @@ def load_inputs():
 
 
 def apply_cleaning_and_mapping(manual, pred, mapping, min_severity, require_attack_id):
-    # Normalize text/case
+    
     for col in ["file","resource","stride","attack_id","severity","notes"]:
         if col in manual.columns:
             manual[col] = manual[col].apply(_norm)
@@ -108,7 +78,7 @@ def apply_cleaning_and_mapping(manual, pred, mapping, min_severity, require_atta
         if col in mapping.columns:
             mapping[col] = mapping[col].apply(_norm)
 
-    # Filter predictions by minimum severity
+    
     min_sev = _norm(min_severity)
     if min_sev not in SEV_ORDER:
         raise ValueError(f"Unknown min severity '{min_sev}'. Choose from {SEV_ORDER}.")
@@ -122,8 +92,8 @@ def apply_cleaning_and_mapping(manual, pred, mapping, min_severity, require_atta
 
     # Map rule_id -> STRIDE/ATT&CK
     pred = pred.merge(mapping, on="rule_id", how="left", suffixes=("", "_map"))
-    pred["stride_mapped"] = pred["stride"].fillna("")      # from mapping
-    pred["attack_mapped"] = pred["attack_id"].fillna("")   # from mapping
+    pred["stride_mapped"] = pred["stride"].fillna("")      
+    pred["attack_mapped"] = pred["attack_id"].fillna("")   
 
     # Prepare keys for matching
     manual["key_file"]   = manual["file"]
@@ -138,7 +108,7 @@ def apply_cleaning_and_mapping(manual, pred, mapping, min_severity, require_atta
     # Build sets for fast TP/FP/FN math
     manual_set = set()
     for _, r in manual.iterrows():
-        # If manual has an attack_id, require exact (case-insensitive) match; else compare only on file+stride
+        
         tup = (r["key_file"], r["key_stride"], r["key_attack"] if r["has_attack"] else "")
         manual_set.add(tup)
 
@@ -168,7 +138,7 @@ def compute_and_write_results(manual_set, pred_set):
     for f, s, a in (manual_set - pred_set):
         mismatches.append({"type": "FN", "file": f, "stride": s, "attack_id": a})
 
-    # Save CSV (sorted for readability)
+    
     if mismatches:
         mdf = pd.DataFrame(mismatches, columns=["type","file","stride","attack_id"]).sort_values(["type","file","stride"])
     else:
