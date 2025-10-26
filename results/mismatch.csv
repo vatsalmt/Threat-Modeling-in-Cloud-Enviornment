@@ -1,0 +1,5 @@
+type,file,stride,attack_id
+FN,cfn_cloudtrail_weak_insecure.yaml,information disclosure,t1087
+FN,tf_ec2_sg_ssh_world_insecure.tf,tampering,t1046
+FN,tf_iam_admin_policy_insecure.tf,information disclosure,t1078
+FN,tf_rds_public_unencrypted_insecure.tf,information disclosure,t1537

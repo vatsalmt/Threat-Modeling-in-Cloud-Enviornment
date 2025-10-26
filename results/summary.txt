@@ -1,0 +1,11 @@
+ACCURACY SUMMARY
+----------------
+True Positives (TP): 5
+False Positives (FP): 0
+False Negatives (FN): 4
+
+Precision: 1.0   -> Of the tool's flags, how many were correct.
+Recall:    0.5556      -> Of the real threats, how many the tool caught.
+F1-score:  0.7143          -> Balance between precision and recall.
+
+See 'results/mismatch.csv' for what was extra (FP) or missed (FN).
