@@ -102,7 +102,7 @@ Automation offered a **drastic reduction in time**, but manual review revealed m
 | **F1-score** | 0.71 | Balanced but incomplete performance |
 
 **Interpretation:**  
-Checkov is **accurate** but **not exhaustive** — it identifies major misconfigurations quickly but misses contextual, behavioral, or multi-dimensional threats that require human expertise.
+Checkov is **accurate** but **not exhaustive** it identifies major misconfigurations quickly but misses contextual, behavioral, or multi-dimensional threats that require human expertise.
 
 ---
 
