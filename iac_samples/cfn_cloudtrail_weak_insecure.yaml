@@ -1,0 +1,13 @@
+# Insecure: CloudTrail with limited coverage and no log validation/KMS
+# Hints: STRIDE=Repudiation/Information Disclosure; ATT&CK=T1562 (Impair Defenses)
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  Trail:
+    Type: AWS::CloudTrail::Trail
+    Properties:
+      TrailName: jj-weak-trail
+      S3BucketName: jj-weak-trail-logs
+      IsLogging: true
+      IsMultiRegionTrail: false
+      EnableLogFileValidation: false
+      IncludeGlobalServiceEvents: false
