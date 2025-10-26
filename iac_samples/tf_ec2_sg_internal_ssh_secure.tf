@@ -1,5 +1,4 @@
 # Secure: SSH restricted to a private CIDR and egress minimized
-# Hints: Least privilege network access
 provider "aws" { region = "us-east-1" }
 
 variable "office_cidr" { default = "10.0.0.0/24" }
