@@ -1,5 +1,3 @@
-# Insecure: Public S3 bucket, no default encryption
-# Hints: STRIDE=Information Disclosure; ATT&CK=T1530 (Data from Cloud Storage)
 provider "aws" { region = "us-east-1" }
 
 resource "aws_s3_bucket" "public_bucket" {
