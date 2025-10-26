@@ -1,5 +1,3 @@
-# Insecure: CloudTrail with limited coverage and no log validation/KMS
-# Hints: STRIDE=Repudiation/Information Disclosure; ATT&CK=T1562 (Impair Defenses)
 AWSTemplateFormatVersion: '2010-09-09'
 Resources:
   Trail:
