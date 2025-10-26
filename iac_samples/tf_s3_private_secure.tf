@@ -1,5 +1,3 @@
-# Secure: Private S3 bucket with encryption, versioning, and public access blocked
-# Hints: Mitigates Information Disclosure; ATT&CK defense hardening
 provider "aws" { region = "us-east-1" }
 
 resource "aws_s3_bucket" "private_bucket" {
