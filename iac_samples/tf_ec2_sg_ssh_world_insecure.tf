@@ -1,5 +1,3 @@
-# Insecure: Security group allows SSH from anywhere
-# Hints: STRIDE=Elevation of Privilege/Tampering; ATT&CK=T1021 (Remote Services)
 provider "aws" { region = "us-east-1" }
 
 resource "aws_security_group" "ssh_world" {
