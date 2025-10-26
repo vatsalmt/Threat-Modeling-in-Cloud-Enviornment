@@ -1,0 +1,6 @@
+rule_id,stride,attack_id
+CKV_AWS_20,Information Disclosure,T1530
+CKV_AWS_79,Elevation of Privilege,T1021
+CKV_AWS_41,Elevation of Privilege,T1098
+CKV_AWS_17,Information Disclosure,T1041
+CKV_AWS_35,Repudiation,T1562

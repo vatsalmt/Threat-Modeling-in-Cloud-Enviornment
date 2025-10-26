@@ -1,0 +1,6 @@
+file,rule_id,severity,notes
+tf_s3_public_insecure.tf,CKV_AWS_20,HIGH,S3 Bucket Allows Public Read
+tf_ec2_sg_ssh_world_insecure.tf,CKV_AWS_79,HIGH,Security Group Allows 0.0.0.0/0 on port 22
+tf_iam_admin_policy_insecure.tf,CKV_AWS_41,HIGH,Wildcard IAM Policy Allows * Actions
+tf_rds_public_unencrypted_insecure.tf,CKV_AWS_17,HIGH,RDS Instance is Publicly Accessible / Unencrypted
+cfn_cloudtrail_weak_insecure.yaml,CKV_AWS_35,MEDIUM,CloudTrail Log Validation Disabled
