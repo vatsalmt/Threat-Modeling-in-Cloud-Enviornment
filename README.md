@@ -39,7 +39,7 @@ We assess two primary factors:
 ## Methodology — Step by Step
 
 ### **1️⃣ Gather IaC Samples**
-- We created 10 small Terraform and CloudFormation templates simulating common AWS services like **S3, EC2, IAM, and RDS**.  
+- We have created 10 small Terraform and CloudFormation templates simulating common AWS services like **S3, EC2, IAM, and RDS**.  
 - Each file represents either a **secure** or **insecure** configuration.
 
 ---
@@ -52,7 +52,7 @@ We assess two primary factors:
 
 ### **3️⃣ Automated Scanning with Checkov**
 - The same IaC files were scanned using **Checkov** (by Bridgecrew).  
-- Output was exported as JSON (`checkov_raw_output.json`) and converted into CSV (`predicted_threats.csv`).
+- Output was exported as JSON format (`checkov_raw_output.json`) and then converted into CSV (`predicted_threats.csv`).
 
 ---
 
