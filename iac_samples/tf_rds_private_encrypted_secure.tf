@@ -1,4 +1,3 @@
-# Secure: Private RDS, encrypted, IAM auth enabled, backups on
 provider "aws" { region = "us-east-1" }
 
 resource "aws_db_instance" "good_rds" {
