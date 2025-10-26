@@ -1,4 +1,4 @@
-Resource,Description,Check_ID,STRIDE,ATTCK_ID,Severity,Source
+file,Description,Check_ID,STRIDE,ATTCK_ID,Severity,Source
 aws_instance.bad_instance,Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted,CKV_AWS_8,Uncategorized,-,,Automated
 aws_instance.bad_instance,Ensure Instance Metadata Service Version 1 is not enabled,CKV_AWS_79,Uncategorized,-,,Automated
 aws_instance.bad_instance,Ensure that detailed monitoring is enabled for EC2 instances,CKV_AWS_126,Uncategorized,-,,Automated
@@ -91,3 +91,4 @@ AWS::S3::Bucket.PublicBucket,Ensure the S3 bucket does not allow READ permission
 AWS::S3::Bucket.PublicBucket,Ensure the S3 bucket has access logging enabled,CKV_AWS_18,Uncategorized,-,,Automated
 AWS::S3::Bucket.PublicBucket,Ensure the S3 bucket does not allow WRITE permissions to everyone,CKV_AWS_57,Uncategorized,-,,Automated
 AWS::S3::Bucket.PublicBucket,Ensure the S3 bucket has server-side-encryption enabled,CKV_AWS_19,Uncategorized,-,,Automated
+
