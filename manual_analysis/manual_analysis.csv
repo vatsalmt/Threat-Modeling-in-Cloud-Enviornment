@@ -1,0 +1,11 @@
+file,resource,stride,attack_id,severity,notes
+tf_s3_public_insecure.tf,aws_s3_bucket.public_bucket,Information Disclosure,T1530,High,Public-read ACL allows anyone to view data
+tf_s3_public_insecure.tf,aws_s3_bucket_public_access_block.pab,Information Disclosure,T1530,High,All public access protections disabled
+tf_ec2_sg_ssh_world_insecure.tf,aws_security_group.ssh_world,Elevation of Privilege,T1021,High,SSH open to entire internet
+tf_ec2_sg_ssh_world_insecure.tf,aws_security_group.ssh_world,Tampering,T1046,Medium,Potential lateral movement / network scanning
+tf_iam_admin_policy_insecure.tf,aws_iam_policy.admin,Elevation of Privilege,T1098,High,Wildcard IAM privileges enable privilege escalation
+tf_iam_admin_policy_insecure.tf,aws_iam_policy.admin,Information Disclosure,T1078,Medium,Credentials could be abused for data access
+tf_rds_public_unencrypted_insecure.tf,aws_db_instance.bad_rds,Information Disclosure,T1041,High,Public DB endpoint exposed
+tf_rds_public_unencrypted_insecure.tf,aws_db_instance.bad_rds,Information Disclosure,T1537,High,"Unencrypted storage, risk of data theft"
+cfn_cloudtrail_weak_insecure.yaml,Trail,Repudiation,T1562,Medium,"Log validation disabled, attacker may cover tracks"
+cfn_cloudtrail_weak_insecure.yaml,Trail,Information Disclosure,T1087,Low,"Not multi-region, global events missing"
