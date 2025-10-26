@@ -1,4 +1,3 @@
-# Secure: Least-privilege read-only access to a specific S3 bucket
 provider "aws" { region = "us-east-1" }
 
 variable "bucket_arn" { default = "arn:aws:s3:::jj-demo-private-bucket-001" }
