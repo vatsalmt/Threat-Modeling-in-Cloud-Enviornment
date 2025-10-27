@@ -29,7 +29,7 @@ To close this gap, our work tells **how accurate and efficient semi-automated th
 ---
 
 ## Objectives
-Our goal is to calculate this two primary factors:
+   Our goal is to calculate this two primary factors:
 
 - **Accuracy:** Measured using Precision, Recall, and F1-score of Checkov’s detections  
 - **Effort:** Measured by comparing time taken for manual vs. automated analysis  
@@ -62,7 +62,7 @@ Our goal is to calculate this two primary factors:
   - **STRIDE Categories** → (e.g., *Information Disclosure*)  
   - **MITRE ATT&CK IDs** → (e.g., `T1537`)
 
-This tells consistency between automated and manual results.
+This tells us consistency between automated and manual results.
 
 ---
 
