@@ -1,4 +1,4 @@
-# This Python script is developed by Vatsal, Parth, Jenish in order to find accuracy for semi automated vs manual threat finding 
+# This Python script is developed by Vatsal, Parth, Jenish in order to find accuracy for semi automated vs manual threat finding. 
 #!/usr/bin/env python3
 
 import argparse
@@ -19,7 +19,7 @@ SEV_ORDER = ["low", "medium", "high", "critical"]
 
 
 def _norm(s):
-    """lowercase + strip; robust to None"""
+    """ lowercase + strip; robust to None """
     if pd.isna(s) or s is None:
         return ""
     return str(s).strip().lower()
@@ -39,7 +39,7 @@ def load_inputs():
 
     manual = pd.read_csv(MANUAL_PATH).fillna("")
     pred   = pd.read_csv(PRED_PATH).fillna("")
-    mapping= pd.read_csv(MAP_PATH).fillna("")
+    mapping = pd.read_csv(MAP_PATH).fillna("")
 
     need_manual_cols = {"file","stride","attack_id"}
     if not need_manual_cols.issubset(set(c.lower() for c in manual.columns)):
@@ -90,12 +90,12 @@ def apply_cleaning_and_mapping(manual, pred, mapping, min_severity, require_atta
 
     pred = pred[pred["severity"].apply(sev_ok)].copy()
 
-    # Map rule_id -> STRIDE/ATT&CK
+    #  Map rule_id -> STRIDE/ATT&CK
     pred = pred.merge(mapping, on="rule_id", how="left", suffixes=("", "_map"))
     pred["stride_mapped"] = pred["stride"].fillna("")      
     pred["attack_mapped"] = pred["attack_id"].fillna("")   
 
-    # Prepare keys for matching
+    #  Prepare keys for matching
     manual["key_file"]   = manual["file"]
     manual["key_stride"] = manual["stride"]
     manual["key_attack"] = manual["attack_id"]
@@ -105,7 +105,7 @@ def apply_cleaning_and_mapping(manual, pred, mapping, min_severity, require_atta
     pred["key_stride"]   = pred["stride_mapped"]
     pred["key_attack"]   = pred["attack_mapped"]
 
-    # Build sets for fast TP/FP/FN math
+    #  Build sets for fast TP/FP/FN math
     manual_set = set()
     for _, r in manual.iterrows():
         
@@ -147,7 +147,7 @@ def compute_and_write_results(manual_set, pred_set):
     mismatch_path = os.path.join(RESULTS_DIR, "mismatch.csv")
     mdf.to_csv(mismatch_path, index=False)
 
-    # Save metrics.json
+    #  Save metrics.json
     metrics = {
         "tp": TP,
         "fp": FP,
@@ -159,7 +159,7 @@ def compute_and_write_results(manual_set, pred_set):
     with open(os.path.join(RESULTS_DIR, "metrics.json"), "w", encoding="utf-8") as f:
         json.dump(metrics, f, indent=2)
 
-    # Save a friendly summary.txt
+    #  Save a friendly summary.txt
     with open(os.path.join(RESULTS_DIR, "summary.txt"), "w", encoding="utf-8") as f:
         f.write("ACCURACY SUMMARY\n")
         f.write("----------------\n")
@@ -199,7 +199,7 @@ def main():
         sys.stderr.write(f"[ERROR] {e}\n")
         sys.exit(1)
 
-    # Console echo
+    #  Console echo
     print(json.dumps(metrics, indent=2))
     print(f"Wrote mismatches to: {mismatch_path}")
     print("Done.")
