@@ -6,7 +6,7 @@
 ## Project Information
 **Course:** Cyber Forensics & Security  
 **Project Title:** *Benchmarking Threat Modeling in Cloud Environments using Infrastructure-as-Code (IaC)*  
-**Group:** 7 — Cyber Forensics
+**Group:** 7 - Cyber Forensics
 
 ---
 
@@ -21,15 +21,15 @@
 
 ## Overview
 
-This project extends the paper **“Threat Modeling in Cloud Computing: A Literature Review”** by introducing **quantitative benchmarks** for measuring the accuracy and practicality of threat modeling in cloud environments.
+This project extends the paper **“Threat Modeling in Cloud Computing: A Literature Review”** by performing **quantitative benchmarks** for calculating the accuracy and practicality of threat modeling in cloud environments.
 
 Most existing research focuses on qualitative frameworks.  
-To close this gap, our work evaluates **how accurate and efficient semi-automated threat modeling tools are** compared to **manual human-led analysis**, using small **Infrastructure-as-Code (IaC)** samples.
+To close this gap, our work tells **how accurate and efficient semi-automated threat modeling tools are** compared to **manual human-led analysis**, using small **Infrastructure-as-Code (IaC)** samples.
 
 ---
 
 ## Objectives
-We assess two primary factors:
+Our goal is to calculate this two primary factors:
 
 - **Accuracy:** Measured using Precision, Recall, and F1-score of Checkov’s detections  
 - **Effort:** Measured by comparing time taken for manual vs. automated analysis  
@@ -39,14 +39,14 @@ We assess two primary factors:
 ## Methodology — Step by Step
 
 ### **1️⃣ Gather IaC Samples**
-- We have created 10 small Terraform and CloudFormation templates simulating common AWS services like **S3, EC2, IAM, and RDS**.  
+- We have created 10 small Terraform and CloudFormation templates which have common AWS services like **S3, EC2, IAM, and RDS**.  
 - Each file represents either a **secure** or **insecure** configuration.
 
 ---
 
 ### **2️⃣ Manual Threat Analysis (Ground Truth)**
-- We did a manual threat assessment for each  file and mapped it to **STRIDE** and **MITRE ATT&CK** categories.  
-- These manual threat assessments are what made up our gold standard dataset and is captured in [`manual_analysis.csv`](manual_analysis/manual_analysis.csv).
+- We did a manual threat analysis for each file and combined it to **STRIDE** and **MITRE ATT&CK** categories.  
+- These manual threat analysis are what made up our gold standard dataset and is captured in [`manual_analysis.csv`](manual_analysis/manual_analysis.csv).
 
 ---
 
@@ -62,7 +62,7 @@ We assess two primary factors:
   - **STRIDE Categories** → (e.g., *Information Disclosure*)  
   - **MITRE ATT&CK IDs** → (e.g., `T1537`)
 
-This ensures consistency between automated and manual results.
+This tells consistency between automated and manual results.
 
 ---
 
@@ -83,10 +83,10 @@ We compared:
 ### **6️⃣ Efficiency Measurement**
 | Method | Duration | Description |
 |:--------|:----------|:------------|
-| **Manual Analysis** | ~90 minutes | Human inspection of all 10 IaC files |
+| **Manual Analysis** | ~40 minutes | Human inspection of all 10 IaC files |
 | **Checkov Scan** | ~6 seconds | Fully automated detection |
 
-Automation offered a **drastic reduction in time**, but manual review revealed more nuanced contextual threats.
+Automation offered a **drastic reduction in time**, but manual review revealed more threats.
 
 ---
 
