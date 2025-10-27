@@ -13,7 +13,7 @@
 ## Loom Presentation Videos
 | Member | Loom Link |
 |:-------|:-----------|
-| **Parth** | [Watch Here](https://www.loom.com/share/cd24935cf49e4839bae12dae0c108b7d?sid=7053cdfd-9d96-431f-843a-e8658f8b8df1) |
+| **Parth** | [Watch Here](https://www.loom.com/share/544aa79fccdd4d68b36c2acf47b17238) |
 | **Vatsal** | [Watch Here](https://www.loom.com/share/d0dec8d65c9c4657bec2ae532b9463fa?sid=746c9871-42a3-489b-ab7c-5a6e1173b24c) |
 | **Jenish** | [Watch Here](https://www.loom.com/share/c2b3f5a38d8340a09668718b3893c549?sid=8ad5503b-8b07-4860-a3f9-4dfe5cb62c89) |
 
